@@ -8,24 +8,24 @@ const oid_info_prefix = '1.3.6.1.4.1.1248.1.2.2.44.1.1.2.1';
 const oid_firmware_version = '118.105.1.0.0';
 const oid_device_status_2 = '115.116.1.0.1';
 
-const oid_eeprom_get_prefix = '1.3.6.1.4.1.1248.1.2.2.44.1.1.2.1.124.124.7.0.133.5.65.190.160';
-const oid_eeprom_set_prefix = '1.3.6.1.4.1.1248.1.2.2.44.1.1.2.1.124.124.16.0.133.5.66.189.33';
-const oid_eeprom_set_suffix = '81.112.109.122.121.102.111.98';
+const oid_eeprom_get_prefix = '1.3.6.1.4.1.1248.1.2.2.44.1.1.2.1.124.124.7.0.151.7.65.190.160';
+const oid_eeprom_set_prefix = '1.3.6.1.4.1.1248.1.2.2.44.1.1.2.1.124.124.16.0.151.7.66.189.33';
+const oid_eeprom_set_suffix = '78.98.115.106.99.98.122.98';
 
-const oid_counter_1_lo_byte = '24.0'; // [0x0018] = 0x00
-const oid_counter_1_hi_byte = '25.0'; // [0x0019] = 0x00
-const oid_counter_2_lo_byte = '26.0'; // [0x001a] = 0x00
-const oid_counter_2_hi_byte = '27.0'; // [0x001b] = 0x00
-const oid_counter_1_after_1 = '28.0'; // [0x001c] = 0x00
-const oid_counter_1_after_2 = '29.0'; // [0x001d] = 0x00
-const oid_counter_1_ex_byte = '30.0'; // [0x001e] = 0x00
-const oid_counter_2_ex_byte = '34.0'; // [0x0022] = 0x00
-const oid_counter_1_store = '46.0'; // [0x002e] = 0x5e
-const oid_counter_2_store = '47.0'; // [0x002f] = 0x5e
-const oid_counter_store = '49.0'; // [0x0031] = 0x00
+const oid_counter_1_lo_byte = '48.0'; // [0x0018] = 0x00
+const oid_counter_1_hi_byte = '49.0'; // [0x0019] = 0x00
+const oid_counter_2_lo_byte = '50.0'; // [0x001a] = 0x00
+const oid_counter_2_hi_byte = '51.0'; // [0x001b] = 0x00
+const oid_counter_1_after_1 = '52.0'; // [0x001c] = 0x00
+const oid_counter_1_after_2 = '53.0'; // [0x001d] = 0x00
+const oid_counter_1_ex_byte = '47.0'; // [0x001e] = 0x00
+const oid_counter_2_ex_byte = '47.0'; // [0x0022] = 0x00
+const oid_counter_1_store = '54.0'; // [0x002e] = 0x5e
+const oid_counter_2_store = '55.0'; // [0x002f] = 0x5e
+const oid_counter_store = '28.0'; // [0x0031] = 0x00
 
 function getRequest(snmp, id: string, cb: (err?: Error, val?: Buffer) => void) {
-    console.debug('get_req', id);
+    console.log('get_req', id);
     snmp.get([id], (err, res) => {
         if (err) return cb(err);
         const [{value}] = res;
